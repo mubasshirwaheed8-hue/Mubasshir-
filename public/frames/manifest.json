@@ -1,0 +1,7 @@
+{
+  "enabled": false,
+  "totalFrames": 90,
+  "extension": "webp",
+  "basePath": "/frames/frame_",
+  "padLength": 4
+}

@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, Cambria, "Times New Roman", serif;
+  --font-sans: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-obsidian: #090909;
+  --color-charcoal: #11100F;
+  --color-gold: #C9A875;
+  --color-champagne: #EAD5AD;
+  --color-ivory: #F3EEE6;
+  --color-taupe: #AAA39A;
+}
+
+@layer base {
+  html {
+    background-color: #090909;
+    color: #F3EEE6;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #090909;
+    color: #F3EEE6;
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+}
+
+/* Refined dark scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090909;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27231E;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A875;
+}
+
+/* Optical focus states for accessibility */
+:focus-visible {
+  outline: 2px solid #C9A875;
+  outline-offset: 3px;
+}
+
+/* Slow ambient zoom used in hero imagery */
+@keyframes slowEditorialZoom {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.075) translate3d(0, -1%, 0);
+  }
+}
+
+.animate-hero-zoom {
+  animation: slowEditorialZoom 22s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-hero-zoom {
+    animation: none;
+  }
+}
